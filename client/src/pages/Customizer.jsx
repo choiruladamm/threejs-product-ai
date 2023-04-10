@@ -1,8 +1,31 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { useSnapshot } from "valtio";
+
+import config from "../config/config";
+import state from "../store";
+import { download } from "../assets";
+import { downloadCanvasToImage, reader } from "../config/helpers";
+import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
+import { fadeAnimation, slideAnimation } from "../config/motion";
+import {
+  AIPicker,
+  ColorPicker,
+  FilePicker,
+  CustomButton,
+  Tab,
+} from "../components";
+
 
 const Customizer = () => {
-  return (
-    <div>Customizer</div>
-  )
-}
+  const snap = useSnapshot(state)
 
-export default Customizer
+  return <AnimatePresence>
+    {!snap.intro && (
+      <>
+        Customizer
+      </>
+    )}
+  </AnimatePresence>;
+};
+
+export default Customizer;

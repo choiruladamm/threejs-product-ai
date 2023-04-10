@@ -44,7 +44,7 @@ const Home = () => {
                 type="filled"
                 title="Customize it"
                 handleClick={() => (state.intro = false)}
-                customStyle="w-fit px-4 px-2.5 font-bold text-sm"
+                customStyles="w-fit px-4 px-2.5 font-bold text-sm"
               />
             </motion.div>
           </motion.div>
